@@ -1,0 +1,16 @@
+{% extends "cards/base.html" %}
+
+{% block content %}
+{% if flashcard %}
+<h2>✏️ Edit Card</h2>
+{% else %}
+<h2>✨ Create New Card</h2>
+{% endif %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">{% if flashcard %} Update Flashcard {% else %} Create Flashcard {% endif %}</button>
+</form>
+<br>
+
+{% endblock %}

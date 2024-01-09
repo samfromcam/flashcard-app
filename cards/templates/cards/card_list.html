@@ -1,0 +1,20 @@
+<!-- cards/templates/cards/card_list.html -->
+
+{% extends "cards/base.html" %}
+{% load humanize %}
+
+{% block content %}
+<h2>{{ flashcards_block.title }}</h2>
+<div>
+    <orbit-reviewarea color="purple">
+        {% for flashcard in flashcards %}
+        <orbit-prompt question="{{ flashcard.question_text }}" question-attachments="{{ flashcard.question_image }}"
+            answer="{{ flashcard.answer_text }}" answer-attachment="{{ flashcard.answer_image }}">
+        </orbit-prompt>
+        {% endfor %}
+    </orbit-reviewarea>
+</div>
+<a href="{% url 'flashcard-create' flashcards_block_id=flashcards_block.id %}" role="button" style="color: blueviolet;">
+    ✨ Create New Card
+</a>
+{% endblock %}

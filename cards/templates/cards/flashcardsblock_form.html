@@ -1,0 +1,14 @@
+<!-- cards/templates/cards/flashcardsblock_form.html -->
+
+{% extends "cards/base.html" %}
+
+{% block content %}
+<h2>Create Flashcards Block</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create Flashcards Block</button>
+</form>
+<br>
+
+{% endblock %}

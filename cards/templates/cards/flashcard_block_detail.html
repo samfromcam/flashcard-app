@@ -1,0 +1,23 @@
+<!-- cards/templates/cards/flashcard_block_detail.html -->
+
+{% extends "cards/base.html" %}
+{% load humanize %}
+
+{% block content %}
+<h2>{{ flashcards_block.title }}</h2>
+{% for flashcard in flashcards %}
+<article>
+    <h4>{{ flashcard.question_text }}</h4>
+    <img src="{{ flashcard.question_image }}" alt="Question Image" />
+    <p>{{ flashcard.question_caption }}</p>
+    <h4>{{ flashcard.answer_text }}</h4>
+    <img src="{{ flashcard.answer_image }}" alt="Answer Image" />
+    <p>{{ flashcard.answer_caption }}</p>
+
+    <hr>
+    <a href="{% url 'card-update' flashcard.id %}" role="button">
+        ✏️ Edit Card
+    </a>
+</article>
+{% endfor %}
+{% endblock %}
