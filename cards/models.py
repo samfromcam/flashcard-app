@@ -13,11 +13,11 @@ class FlashcardsBlock(models.Model):
 
 
 class Flashcard(models.Model):
-    question_text = models.CharField(max_length=100)
+    question_text = models.CharField(max_length=300)
     question_caption = models.CharField(max_length=100, blank=True, null=True)
     question_image = models.URLField(blank=True, null=True)
 
-    answer_text = models.CharField(max_length=100)
+    answer_text = models.CharField(max_length=300)
     answer_caption = models.CharField(max_length=100, blank=True, null=True)
     answer_image = models.URLField(blank=True, null=True)
 

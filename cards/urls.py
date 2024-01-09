@@ -3,7 +3,7 @@
 from django.urls import path
 from django.views.generic import TemplateView
 from .views import (
-    CardListView,
+    FlashcardListView,
     FlashcardsBlockCreateView,
     FlashcardCreateView,
     FlashcardUpdateView,
@@ -11,7 +11,7 @@ from .views import (
 )
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="cards/base.html"), name="home"),
+    path("", TemplateView.as_view(template_name="cards/home.html"), name="home"),
     path(
         "flashcardsblock/create/",
         FlashcardsBlockCreateView.as_view(),
@@ -24,7 +24,7 @@ urlpatterns = [
     ),
     path(
         "cards/card_list/<int:flashcards_block_id>/",
-        CardListView.as_view(),
+        FlashcardListView.as_view(),
         name="show-cards",
     ),
     path(

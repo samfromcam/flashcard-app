@@ -20,4 +20,10 @@
     </a>
 </article>
 {% endfor %}
+<a href="{% url 'flashcard-create' flashcards_block_id=flashcards_block.id %}" role="button" style="color: blueviolet;">
+    ✨ Create New Card
+</a>
+<a href="{% url 'show-cards' flashcards_block_id=flashcards_block.id %}" role="button" style="color: blueviolet;">
+    ✨ Show Student View
+</a>
 {% endblock %}

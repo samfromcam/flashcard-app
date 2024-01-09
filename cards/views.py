@@ -46,7 +46,7 @@ class FlashcardCreateView(CreateView):
 
 
 # Show the flashcard desk
-class CardListView(ListView):
+class FlashcardListView(ListView):
     model = Flashcard
     template_name = "cards/card_list.html"
 
